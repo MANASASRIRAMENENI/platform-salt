@@ -40,7 +40,7 @@ writer.destination.type=HDFS
 writer.partitioner.class=gobblin.pnda.PNDATimeBasedAvroWriterPartitioner
 writer.partition.columns=timestamp
 writer.partition.level=hourly
-writer.partition.pattern='year='YYYY/'month='MM/'day='dd/'hour='HH
+writer.partition.pattern='year_'YYYY/'month_'MM/'day_'dd/'hour_'HH
 writer.partition.prefix=template
 
 # ==== Publisher ====

@@ -5,16 +5,16 @@
 
 {%- set compaction_pattern = salt['pillar.get']('dataset_compaction:pattern', 'd') %}
 {%- if compaction_pattern == 'H' %}
-{%- set folder_pattern="'year='YYYY/'month='MM/'day='dd/'hour='HH" %}
+{%- set folder_pattern="'year_'YYYY/'month_'MM/'day_'dd/'hour_'HH" %}
 {%- set time_ago='1d' %}
 {% elif compaction_pattern == 'd' %}
-{%- set folder_pattern="'year='YYYY/'month='MM/'day='dd" %}
+{%- set folder_pattern="'year_'YYYY/'month_'MM/'day_'dd" %}
 {%- set time_ago='1d2h' %}
 {% elif compaction_pattern == 'M' %}
-{%- set folder_pattern="'year='YYYY/'month='MM" %}
+{%- set folder_pattern="'year_'YYYY/'month_'MM" %}
 {%- set time_ago='1m2h' %}
 {% elif compaction_pattern == 'Y' %}
-{%- set folder_pattern="'year='YYYY" %}
+{%- set folder_pattern="'year_'YYYY" %}
 {%- set time_ago='12m2h' %}
 {%- endif %}
 
